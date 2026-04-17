@@ -1,6 +1,10 @@
-test = [1, 34, 5, 6, 7, 8, 9, 10]
+import cv2
 
-if 34 in test:
-    print("34 is in the list")
-else:
-    print('34 is not in the list')
+try:
+    img = cv2.imread('C:\\Users\\joshlin69x69\\Pictures\\penny.jpg')
+except Exception as e:
+    print(f"The image loading failed: {e}")
+
+cv2.imshow('Penny the Ginger Cat', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
