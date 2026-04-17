@@ -1,6 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    printf("Hello, World!\n");
+    int *ptr;
+    int a = 16;
+
+    ptr = &a;
+    printf("%d", *ptr);
     return 0;
 }
