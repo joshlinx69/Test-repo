@@ -1,23 +1,11 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
-bool isInThere (vector<int>& vec, int n){
-    for (auto it = vec.begin(); it != vec.end(); it++){
-        if (*it == n){
-            return true;
-        }
-    }
-    return false;
-}
-
-void disVect(vector<int>& vec){
-    for (int i = 0; i < vec.size(); i++){
-        cout << vec[i] << " ";
-    }
-    cout << endl;
-}
+bool isInThere (vector<int>& vec, int n);
+void disVect (vector<int>& vec);
 
 int main() {
     int a;
@@ -32,5 +20,23 @@ int main() {
         cout << "The vector has been updated: ";
         disVect(nums);
     }
+    sort(nums.begin(), nums.end());
+    disVect(nums);
     return 0;
+}
+
+bool isInThere (vector<int>& vec, int n){
+    for (auto it = vec.begin(); it != vec.end(); it++){
+        if (*it == n){
+            return true;
+        }
+    }
+    return false;
+}
+
+void disVect(vector<int>& vec){
+    for (auto it = vec.begin(); it != vec.end(); it++){
+        cout << *it << " ";
+    }
+    cout << endl;
 }
